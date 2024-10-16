@@ -141,7 +141,6 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/spes/proprietary/vendor/etc/init/android.hardware.gnss@2.1-service-qti.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.gnss@2.1-service-qti.rc \
     vendor/xiaomi/spes/proprietary/vendor/etc/init/android.hardware.keymaster@4.1-service-qti.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.keymaster@4.1-service-qti.rc \
     vendor/xiaomi/spes/proprietary/vendor/etc/init/android.hardware.neuralnetworks@1.3-service-qti.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.neuralnetworks@1.3-service-qti.rc \
-    vendor/xiaomi/spes/proprietary/vendor/etc/init/android.hardware.usb@1.2-service-qti.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.usb@1.2-service-qti.rc \
     vendor/xiaomi/spes/proprietary/vendor/etc/init/cnd.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/cnd.rc \
     vendor/xiaomi/spes/proprietary/vendor/etc/init/dataadpl.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/dataadpl.rc \
     vendor/xiaomi/spes/proprietary/vendor/etc/init/dataqti.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/dataqti.rc \
@@ -419,6 +418,9 @@ PRODUCT_PACKAGES += \
     libadsp_default_listener \
     libadsprpc \
     libc2d30_bltlib \
+    libcapiv2svacnn \
+    libcapiv2svarnn \
+    libcapiv2vop \
     libcdsp_default_listener \
     libcdsprpc \
     libdiag \
@@ -704,9 +706,6 @@ PRODUCT_PACKAGES += \
     libcamxswispiqmodule \
     libcamxswprocessalgo \
     libcamxtintlessalgo \
-    libcapiv2svacnn \
-    libcapiv2svarnn \
-    libcapiv2vop \
     libcdfw \
     libcdfw_remote_api \
     libchilog \
@@ -847,6 +846,7 @@ PRODUCT_PACKAGES += \
     libsnsdiaglog \
     libsoc_helper \
     libsoc_helper_jni \
+    libspl \
     libssc \
     libssc_default_listener \
     libssd \
@@ -1060,7 +1060,6 @@ PRODUCT_PACKAGES += \
     android.hardware.gnss@2.1-service-qti.xml \
     android.hardware.keymaster@4.1-service-default-qti.xml \
     android.hardware.neuralnetworks@1.3-service-qti.xml \
-    android.hardware.usb@1.2-service.xml \
     manifest_android.hardware.drm@1.3-service.widevine.xml \
     manifest_vendor.xiaomi.hardware.mlipay.xml \
     manifest_vendor.xiaomi.hardware.mtdservice.xml \
@@ -1085,7 +1084,6 @@ PRODUCT_PACKAGES += \
     android.hardware.gnss@2.1-service-qti \
     android.hardware.keymaster@4.1-service-qti \
     android.hardware.neuralnetworks@1.3-service-qti \
-    android.hardware.usb@1.2-service-qti \
     qcrild \
     vendor.display.color@1.0-service \
     vendor.qti.hardware.alarm@1.0-service \
@@ -1101,7 +1099,6 @@ PRODUCT_PACKAGES += \
     imsdatadaemon \
     imsqmidaemon \
     imsrcsd \
-    init.mi.usb \
     init.qcom.sensors \
     init.qti.chg_policy \
     irsc_util \

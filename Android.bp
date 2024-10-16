@@ -344,6 +344,69 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+	name: "libcapiv2svacnn",
+	owner: "xiaomi",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libcapiv2svacnn.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+		android_arm64: {
+			srcs: ["proprietary/vendor/lib64/libcapiv2svacnn.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "both",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libcapiv2svarnn",
+	owner: "xiaomi",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libcapiv2svarnn.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+		android_arm64: {
+			srcs: ["proprietary/vendor/lib64/libcapiv2svarnn.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "both",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libcapiv2vop",
+	owner: "xiaomi",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libcapiv2vop.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+		android_arm64: {
+			srcs: ["proprietary/vendor/lib64/libcapiv2vop.so"],
+			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "both",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
 	name: "libcdsp_default_listener",
 	owner: "xiaomi",
 	strip: {
@@ -3017,7 +3080,7 @@ cc_prebuilt_library_shared {
 	target: {
 		android_arm64: {
 			srcs: ["proprietary/vendor/lib64/camera/components/com.qti.node.mialgocontrol.so"],
-			shared_libs: ["libcamera_metadata", "libchilog", "libcutils", "libcom.qti.chinodeutils", "libcamera_scene", "libc++_shared", "libxmi_high_dynamic_range", "libwa_widelens_undistort", "libmibokeh_712", "libjpeg", "libpng", "libz", "libpiex", "libexpat", "libdng_sdk2vendor", "libEGL", "libGLESv2", "libnativewindow", "libft2vendor", "libutils", "libvideofilter_only", "libmpbase", "libarcsoft_beautyshot", "libarcsoft_hdr_detection", "libarcsoft_high_dynamic_range", "libarcsoft_low_light_hdr", "liblog", "libc++", "libc", "libm", "libdl", ],
+			shared_libs: ["libpiex_shim", "libcamera_metadata", "libchilog", "libcutils", "libcom.qti.chinodeutils", "libcamera_scene", "libc++_shared", "libxmi_high_dynamic_range", "libwa_widelens_undistort", "libmibokeh_712", "libjpeg", "libpng", "libz", "libpiex", "libexpat", "libdng_sdk2vendor", "libEGL", "libGLESv2", "libnativewindow", "libft2vendor", "libutils", "libvideofilter_only", "libmpbase", "libarcsoft_beautyshot", "libarcsoft_hdr_detection", "libarcsoft_high_dynamic_range", "libarcsoft_low_light_hdr", "liblog", "libc++", "libc", "libm", "libdl", ],
 		},
 	},
 	compile_multilib: "64",
@@ -5408,57 +5471,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-	name: "libcapiv2svacnn",
-	owner: "xiaomi",
-	strip: {
-		none: true,
-	},
-	target: {
-		android_arm64: {
-			srcs: ["proprietary/vendor/lib64/libcapiv2svacnn.so"],
-			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
-		},
-	},
-	compile_multilib: "64",
-	prefer: true,
-	soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-	name: "libcapiv2svarnn",
-	owner: "xiaomi",
-	strip: {
-		none: true,
-	},
-	target: {
-		android_arm64: {
-			srcs: ["proprietary/vendor/lib64/libcapiv2svarnn.so"],
-			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
-		},
-	},
-	compile_multilib: "64",
-	prefer: true,
-	soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-	name: "libcapiv2vop",
-	owner: "xiaomi",
-	strip: {
-		none: true,
-	},
-	target: {
-		android_arm64: {
-			srcs: ["proprietary/vendor/lib64/libcapiv2vop.so"],
-			shared_libs: ["libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
-		},
-	},
-	compile_multilib: "64",
-	prefer: true,
-	soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
 	name: "libcdfw",
 	owner: "xiaomi",
 	strip: {
@@ -7834,6 +7846,23 @@ cc_prebuilt_library_shared {
 		android_arm64: {
 			srcs: ["proprietary/vendor/lib64/libsoc_helper_jni.so"],
 			shared_libs: ["libsoc_helper", "liblog", "libutils", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "64",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libspl",
+	owner: "xiaomi",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm64: {
+			srcs: ["proprietary/vendor/lib64/libspl.so"],
+			shared_libs: ["libcutils", "liblog", "libQSEEComAPI", "libc++", "libc", "libm", "libdl", ],
 		},
 	},
 	compile_multilib: "64",
@@ -10990,15 +11019,6 @@ prebuilt_etc_xml {
 }
 
 prebuilt_etc_xml {
-	name: "android.hardware.usb@1.2-service.xml",
-	owner: "xiaomi",
-	src: "proprietary/vendor/etc/vintf/manifest/android.hardware.usb@1.2-service.xml",
-	filename_from_src: true,
-	sub_dir: "vintf/manifest",
-	soc_specific: true,
-}
-
-prebuilt_etc_xml {
 	name: "manifest_android.hardware.drm@1.3-service.widevine.xml",
 	owner: "xiaomi",
 	src: "proprietary/vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.3-service.widevine.xml",
@@ -11380,24 +11400,6 @@ cc_prebuilt_binary {
 }
 
 cc_prebuilt_binary {
-	name: "android.hardware.usb@1.2-service-qti",
-	owner: "xiaomi",
-	target: {
-		android_arm64: {
-			srcs: ["proprietary/vendor/bin/hw/android.hardware.usb@1.2-service-qti"],
-			shared_libs: ["libbase", "libhidlbase", "liblog", "libutils", "libhardware", "libcutils", "android.hardware.usb@1.0", "android.hardware.usb@1.1", "android.hardware.usb@1.2", "libc++", "libc", "libm", "libdl", ],
-		},
-	},
-	compile_multilib: "64",
-	strip: {
-		none: true,
-	},
-	prefer: true,
-	relative_install_path: "hw",
-	soc_specific: true,
-}
-
-cc_prebuilt_binary {
 	name: "qcrild",
 	owner: "xiaomi",
 	target: {
@@ -11661,14 +11663,6 @@ cc_prebuilt_binary {
 		none: true,
 	},
 	prefer: true,
-	soc_specific: true,
-}
-
-sh_binary {
-	name: "init.mi.usb",
-	owner: "xiaomi",
-	src: "proprietary/vendor/bin/init.mi.usb.sh",
-	filename: "init.mi.usb.sh",
 	soc_specific: true,
 }
 
